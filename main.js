@@ -22,7 +22,9 @@ const getDayInfo = date => {
       }
     }
     if (monthStart.getDay() === 6) {
-      if (+day === 31) {
+      if (+day === 28) {
+        return 5;
+      } else if (+day === 31) {
         return 6;
       }
     }
@@ -43,9 +45,12 @@ const getDayInfo = date => {
 const result = document.querySelector('.result');
 result.insertAdjacentHTML('beforeend', 
   `
-  <p>${getDayInfo('01.01.2022')}</p>
-  <p>${getDayInfo('15.12.2021')}</p>
+    <p>${getDayInfo('01.01.2022')}</p>
+    <p>${getDayInfo('15.12.2021')}</p>
   `
 );
 console.log(getDayInfo('01.01.2022'));
 console.log(getDayInfo('15.12.2021'));
+// console.log(getDayInfo('28.01.2022'));
+// console.log(getDayInfo('28.02.2022'));
+// console.log(getDayInfo('31.01.2022'));
